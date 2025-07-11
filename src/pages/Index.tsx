@@ -22,11 +22,11 @@ const Index = () => {
           <div className="relative px-8 py-12 md:py-16">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Welcome to JobPost Pro
+                Welcome to ATS Pro
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Streamline your hiring process with our powerful job posting and distribution platform. 
-                Create, manage, and track all your job postings in one place.
+                Complete AI-powered Applicant Tracking System. Manage job postings, candidates, assessments, 
+                interviews, offers, and analytics all in one powerful platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary-dark">
@@ -47,7 +47,7 @@ const Index = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
           <Card className="border border-border hover:shadow-lg transition-shadow">
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
@@ -70,7 +70,7 @@ const Index = () => {
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Total Applicants
+                  Candidates
                 </CardTitle>
                 <Users className="h-4 w-4 text-primary" />
               </div>
@@ -88,15 +88,15 @@ const Index = () => {
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Draft Jobs
+                  Interviews
                 </CardTitle>
-                <Clock className="h-4 w-4 text-warning" />
+                <Clock className="h-4 w-4 text-primary" />
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-foreground">3</div>
+              <div className="text-2xl font-bold text-foreground">8</div>
               <div className="text-sm text-muted-foreground">
-                Ready to publish
+                Scheduled this week
               </div>
             </CardContent>
           </Card>
@@ -105,7 +105,24 @@ const Index = () => {
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Avg. Time to Hire
+                  Pending Offers
+                </CardTitle>
+                <Clock className="h-4 w-4 text-warning" />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-foreground">3</div>
+              <div className="text-sm text-warning">
+                1 expiring soon
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border border-border hover:shadow-lg transition-shadow">
+            <CardHeader className="pb-2">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-sm font-medium text-muted-foreground">
+                  Time to Hire
                 </CardTitle>
                 <Clock className="h-4 w-4 text-primary" />
               </div>
@@ -160,13 +177,23 @@ const Index = () => {
                   Create Job Post
                 </Link>
               </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Users className="h-4 w-4 mr-2" />
-                Review Candidates
+              <Button asChild variant="outline" className="w-full justify-start">
+                <Link to="/candidates">
+                  <Users className="h-4 w-4 mr-2" />
+                  Review Candidates
+                </Link>
               </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Briefcase className="h-4 w-4 mr-2" />
-                View Analytics
+              <Button asChild variant="outline" className="w-full justify-start">
+                <Link to="/interviews">
+                  <Clock className="h-4 w-4 mr-2" />
+                  Schedule Interview
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="w-full justify-start">
+                <Link to="/analytics">
+                  <TrendingUp className="h-4 w-4 mr-2" />
+                  View Analytics
+                </Link>
               </Button>
             </CardContent>
           </Card>

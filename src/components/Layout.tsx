@@ -22,7 +22,7 @@ export default function Layout({ children, className }: LayoutProps) {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link to="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors">
-                JobPost Pro
+                ATS Pro
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link 
@@ -40,16 +40,68 @@ export default function Layout({ children, className }: LayoutProps) {
                   to="/jobs" 
                   className={cn(
                     "transition-colors",
-                    isActive("/jobs") 
+                    location.pathname.startsWith("/jobs") 
                       ? "text-primary font-medium" 
                       : "text-foreground hover:text-primary"
                   )}
                 >
-                  Job Postings
+                  Jobs
                 </Link>
-                <span className="text-muted-foreground">
+                <Link 
+                  to="/candidates" 
+                  className={cn(
+                    "transition-colors",
+                    location.pathname.startsWith("/candidates") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
                   Candidates
-                </span>
+                </Link>
+                <Link 
+                  to="/assessments" 
+                  className={cn(
+                    "transition-colors",
+                    location.pathname.startsWith("/assessments") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  Assessments
+                </Link>
+                <Link 
+                  to="/interviews" 
+                  className={cn(
+                    "transition-colors",
+                    location.pathname.startsWith("/interviews") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  Interviews
+                </Link>
+                <Link 
+                  to="/offers" 
+                  className={cn(
+                    "transition-colors",
+                    location.pathname.startsWith("/offers") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  Offers
+                </Link>
+                <Link 
+                  to="/analytics" 
+                  className={cn(
+                    "transition-colors",
+                    location.pathname.startsWith("/analytics") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  Analytics
+                </Link>
               </nav>
             </div>
             
