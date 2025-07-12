@@ -51,7 +51,7 @@ export default function Layout({ children, className }: LayoutProps) {
                   to="/candidates" 
                   className={cn(
                     "transition-colors",
-                    location.pathname.startsWith("/candidates") 
+                    location.pathname.startsWith("/candidates") || location.pathname.startsWith("/talent-pool")
                       ? "text-primary font-medium" 
                       : "text-foreground hover:text-primary"
                   )}
@@ -59,21 +59,10 @@ export default function Layout({ children, className }: LayoutProps) {
                   Candidates
                 </Link>
                 <Link 
-                  to="/assessments" 
-                  className={cn(
-                    "transition-colors",
-                    location.pathname.startsWith("/assessments") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
-                  )}
-                >
-                  Assessments
-                </Link>
-                <Link 
                   to="/interviews" 
                   className={cn(
                     "transition-colors",
-                    location.pathname.startsWith("/interviews") 
+                    location.pathname.startsWith("/interviews") || location.pathname.startsWith("/video-interviews")
                       ? "text-primary font-medium" 
                       : "text-foreground hover:text-primary"
                   )}
@@ -90,6 +79,17 @@ export default function Layout({ children, className }: LayoutProps) {
                   )}
                 >
                   Offers
+                </Link>
+                <Link 
+                  to="/integrations" 
+                  className={cn(
+                    "transition-colors",
+                    location.pathname.startsWith("/integrations") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  Settings
                 </Link>
                 <Link 
                   to="/analytics" 
