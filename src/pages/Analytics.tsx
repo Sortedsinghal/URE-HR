@@ -5,6 +5,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart3, TrendingUp, Users, Clock, DollarSign, Target, Download, Filter } from "lucide-react";
+import {
+  AreaChart,
+  Area,
+  BarChart,
+  Bar,
+  LineChart,
+  Line,
+  PieChart,
+  Pie,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  FunnelChart,
+  Funnel
+} from "recharts";
 
 const Analytics = () => {
   const [dateRange, setDateRange] = useState("last-30-days");
@@ -67,6 +85,33 @@ const Analytics = () => {
     { metric: "Age Diversity", current: "22% 35+ years", target: "25%", status: "on-track" },
     { metric: "Education Diversity", current: "15% Non-traditional", target: "20%", status: "behind" }
   ];
+
+  const applicationsOverTime = [
+    { month: "Jan", applications: 65, hires: 12 },
+    { month: "Feb", applications: 78, hires: 15 },
+    { month: "Mar", applications: 92, hires: 18 },
+    { month: "Apr", applications: 103, hires: 22 },
+    { month: "May", applications: 87, hires: 16 },
+    { month: "Jun", applications: 95, hires: 19 },
+    { month: "Jul", applications: 108, hires: 24 }
+  ];
+
+  const hiringTrends = [
+    { week: "Week 1", engineering: 12, product: 5, design: 3, sales: 8 },
+    { week: "Week 2", engineering: 15, product: 7, design: 4, sales: 6 },
+    { week: "Week 3", engineering: 8, product: 9, design: 6, sales: 12 },
+    { week: "Week 4", engineering: 18, product: 4, design: 2, sales: 9 }
+  ];
+
+  const sourceBreakdown = [
+    { name: "LinkedIn", value: 35, color: "#0077B5" },
+    { name: "Indeed", value: 25, color: "#2764C5" },
+    { name: "Company Website", value: 20, color: "#16A34A" },
+    { name: "Referrals", value: 15, color: "#CA8A04" },
+    { name: "Others", value: 5, color: "#6B7280" }
+  ];
+
+  const COLORS = ['#0077B5', '#2764C5', '#16A34A', '#CA8A04', '#6B7280'];
 
   const getTrendIcon = (trend: string) => {
     return trend === "up" ? "↗️" : "↘️";
@@ -174,7 +219,7 @@ const Analytics = () => {
               ))}
             </div>
 
-            {/* Charts Placeholder */}
+            {/* Interactive Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
@@ -184,11 +229,29 @@ const Analytics = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="h-64 flex items-center justify-center bg-accent/20 rounded-lg">
-                    <div className="text-center">
-                      <BarChart3 className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
-                      <p className="text-muted-foreground">Chart visualization would go here</p>
-                    </div>
+                  <div className="h-64">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <AreaChart data={applicationsOverTime}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="month" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area 
+                          type="monotone" 
+                          dataKey="applications" 
+                          stroke="hsl(var(--primary))" 
+                          fill="hsl(var(--primary))" 
+                          fillOpacity={0.3} 
+                        />
+                        <Area 
+                          type="monotone" 
+                          dataKey="hires" 
+                          stroke="hsl(var(--success))" 
+                          fill="hsl(var(--success))" 
+                          fillOpacity={0.3} 
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
                   </div>
                 </CardContent>
               </Card>
@@ -197,19 +260,59 @@ const Analytics = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
                     <TrendingUp className="h-5 w-5" />
-                    <span>Hiring Trends</span>
+                    <span>Hiring by Department</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="h-64 flex items-center justify-center bg-accent/20 rounded-lg">
-                    <div className="text-center">
-                      <TrendingUp className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
-                      <p className="text-muted-foreground">Trend analysis would go here</p>
-                    </div>
+                  <div className="h-64">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={hiringTrends}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="week" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="engineering" fill="hsl(var(--primary))" />
+                        <Bar dataKey="product" fill="hsl(var(--success))" />
+                        <Bar dataKey="design" fill="hsl(var(--warning))" />
+                        <Bar dataKey="sales" fill="hsl(var(--accent))" />
+                      </BarChart>
+                    </ResponsiveContainer>
                   </div>
                 </CardContent>
               </Card>
             </div>
+
+            {/* Source Breakdown Pie Chart */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Users className="h-5 w-5" />
+                  <span>Candidate Source Breakdown</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-64">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={sourceBreakdown}
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={80}
+                        fill="#8884d8"
+                        dataKey="value"
+                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                      >
+                        {sourceBreakdown.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                      </Pie>
+                      <Tooltip />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              </CardContent>
+            </Card>
           </TabsContent>
 
           <TabsContent value="funnel" className="space-y-6">
