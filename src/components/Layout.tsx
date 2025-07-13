@@ -21,10 +21,12 @@ export default function Layout({ children, className }: LayoutProps) {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link to="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors">
-                Young Thames<br />
-                (Public Relations)
+              {/* === MODIFIED CODE START === */}
+              <Link to="/" className="flex flex-col leading-none hover:opacity-90 transition-opacity">
+                <span className="text-2xl font-bold text-primary">Young Thames</span>
+                <span className="text-sm text-foreground/80">(Public Relations)</span>
               </Link>
+              {/* === MODIFIED CODE END === */}
               <nav className="hidden md:flex space-x-6">
                 <Link 
                   to="/" 
