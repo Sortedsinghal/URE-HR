@@ -23,7 +23,7 @@ export default function Layout({ children, className }: LayoutProps) {
             <div className="flex items-center space-x-4">
               <Link to="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors">
                 Young Thames<br />
-                (Public Relations)
+                <h4>(Public Relations)<h4/>
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link 
