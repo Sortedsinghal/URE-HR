@@ -22,7 +22,7 @@ const Index = () => {
           <div className="relative px-8 py-12 md:py-16">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Welcome to Young Thames - Leading Public Relations Agency for Change
+                Welcome to Young Thames
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Elevate your brand with our sophisticated recruitment and public relations solutions. 
