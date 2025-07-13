@@ -22,7 +22,7 @@ export default function Layout({ children, className }: LayoutProps) {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link to="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors">
-                ATS Pro
+                Young Thames
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link 
