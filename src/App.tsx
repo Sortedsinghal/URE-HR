@@ -11,6 +11,7 @@ import CandidateProfile from "./pages/CandidateProfile";
 import TalentPool from "./pages/TalentPool";
 import Assessments from "./pages/Assessments";
 import Interviews from "./pages/Interviews";
+import ScheduleInterview from "./pages/ScheduleInterview";
 import VideoInterviews from "./pages/VideoInterviews";
 import Offers from "./pages/Offers";
 import CommunicationTemplates from "./pages/CommunicationTemplates";
@@ -36,7 +37,7 @@ const App = () => (
           <Route path="/talent-pool" element={<TalentPool />} />
           <Route path="/assessments" element={<Assessments />} />
           <Route path="/interviews" element={<Interviews />} />
-          <Route path="/interviews/schedule" element={<CreateJob />} />
+          <Route path="/interviews/schedule" element={<ScheduleInterview />} />
           <Route path="/interviews/:id" element={<CandidateProfile />} />
           <Route path="/video-interviews" element={<VideoInterviews />} />
           <Route path="/offers" element={<Offers />} />
