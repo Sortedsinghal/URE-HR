@@ -22,11 +22,12 @@ const Index = () => {
           <div className="relative px-8 py-12 md:py-16">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Welcome to Young Thames
+                Welcome to Young Thames (Public Relations)
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Complete AI-powered Applicant Tracking System. Manage job postings, candidates, assessments, 
-                interviews, offers, and analytics all in one powerful platform.
+                Elevate your brand with our sophisticated recruitment and public relations solutions. 
+                We connect exceptional talent with visionary organizations through our comprehensive, 
+                AI-enhanced platform designed for seamless candidate management and strategic communications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary-dark">
