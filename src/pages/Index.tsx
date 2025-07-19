@@ -22,23 +22,23 @@ const Index = () => {
           <div className="relative px-8 py-12 md:py-16">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Welcome to Young Thames
+                Welcome to URE HR
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Elevate your brand with our sophisticated recruitment and public relations solutions. 
-                We connect exceptional talent with visionary organizations through our comprehensive, 
-                AI-enhanced platform designed for seamless candidate management and strategic communications.
+                Transforming Leadership Landscapes across India and South Asia. 
+                We provide expert consulting for leadership roles, specializing in CEO & CFO recruitment, 
+                talent acquisition, and strategic HR solutions for corporate, advisory, auditing, finance, and manufacturing sectors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary-dark">
                   <Link to="/jobs/create">
                     <Plus className="h-5 w-5 mr-2" />
-                    Create New Job Post
+                    Post Leadership Role
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/jobs">
-                    View All Jobs
+                    View Executive Search
                     <ArrowRight className="h-5 w-5 ml-2" />
                   </Link>
                 </Button>

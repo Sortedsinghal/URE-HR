@@ -22,9 +22,8 @@ export default function Layout({ children, className }: LayoutProps) {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link to="/" className="flex flex-col leading-none hover:opacity-90 transition-opacity">
-                <span className="text-2xl font-bold text-primary">Young Thames</span>
-                {/* === MODIFIED LINE === */}
-                <span className="text-sm text-primary">(Public Relations)</span>
+                <span className="text-2xl font-bold text-primary">URE HR</span>
+                <span className="text-sm text-primary">Expert consulting for leadership roles</span>
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link 
