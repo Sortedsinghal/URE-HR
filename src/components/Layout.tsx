@@ -1,3 +1,4 @@
+
 import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -36,6 +37,17 @@ export default function Layout({ children, className }: LayoutProps) {
                   )}
                 >
                   Dashboard
+                </Link>
+                <Link 
+                  to="/about" 
+                  className={cn(
+                    "transition-colors",
+                    isActive("/about") 
+                      ? "text-primary font-medium" 
+                      : "text-foreground hover:text-primary"
+                  )}
+                >
+                  About
                 </Link>
                 <Link 
                   to="/jobs" 
