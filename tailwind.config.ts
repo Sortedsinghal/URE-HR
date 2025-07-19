@@ -18,7 +18,13 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
+				'text-subtle': 'hsl(var(--text-subtle))',
+				'hero-background': 'hsl(var(--hero-background))',
+				'section-background': 'hsl(var(--section-background))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

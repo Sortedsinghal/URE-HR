@@ -3,202 +3,187 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Users, Briefcase, Clock, Plus, ArrowRight } from "lucide-react";
+import { TrendingUp, Users, Briefcase, Clock, Plus, ArrowRight, Calendar } from "lucide-react";
 import heroImage from "@/assets/dashboard-hero.jpg";
 
 const Index = () => {
   return (
     <Layout>
-      <div className="space-y-8">
-        {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-accent to-primary-light">
-          <div className="absolute inset-0 opacity-20">
-            <img 
-              src={heroImage} 
-              alt="Dashboard hero" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="relative px-8 py-12 md:py-16">
-            <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Welcome to URE HR
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Transforming Leadership Landscapes across India and South Asia. 
-                We provide expert consulting for leadership roles, specializing in CEO & CFO recruitment, 
-                talent acquisition, and strategic HR solutions for corporate, advisory, auditing, finance, and manufacturing sectors.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary-dark">
-                  <Link to="/jobs/create">
-                    <Plus className="h-5 w-5 mr-2" />
-                    Post Leadership Role
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/jobs">
-                    View Executive Search
-                    <ArrowRight className="h-5 w-5 ml-2" />
-                  </Link>
-                </Button>
-              </div>
+      {/* Hero Section */}
+      <section className="hero-section relative py-24 px-6 overflow-hidden -mx-6">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+              <span className="plus-accent">Expert HR Consulting</span> & 
+              <span className="block text-accent"> Executive Search</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 font-medium">
+              Transforming Leadership Landscapes across India and South Asia
+            </p>
+            <p className="text-lg mb-10 text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
+              Specializing in CEO & CFO recruitment, talent acquisition, and strategic HR solutions for corporate organizations, manufacturing units, and BFSI sectors.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 hover:shadow-lg text-lg px-8 py-4 font-semibold transition-all duration-300"
+                asChild
+              >
+                <Link to="/create-job">Request Business Proposal</Link>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300"
+                asChild
+              >
+                <Link to="/jobs">View Executive Search</Link>
+              </Button>
             </div>
           </div>
         </div>
+      </section>
 
+      <div className="space-y-16">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-          <Card className="border border-border hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Active Jobs
-                </CardTitle>
-                <Briefcase className="h-4 w-4 text-primary" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-foreground">12</div>
-              <div className="flex items-center text-sm">
-                <TrendingUp className="h-3 w-3 text-success mr-1" />
-                <span className="text-success">+2 this week</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-border hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Candidates
-                </CardTitle>
-                <Users className="h-4 w-4 text-primary" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-foreground">247</div>
-              <div className="flex items-center text-sm">
-                <TrendingUp className="h-3 w-3 text-success mr-1" />
-                <span className="text-success">+18 today</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-border hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Interviews
-                </CardTitle>
-                <Clock className="h-4 w-4 text-primary" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-foreground">8</div>
-              <div className="text-sm text-muted-foreground">
-                Scheduled this week
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-border hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Pending Offers
-                </CardTitle>
-                <Clock className="h-4 w-4 text-warning" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-foreground">3</div>
-              <div className="text-sm text-warning">
-                1 expiring soon
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-border hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Time to Hire
-                </CardTitle>
-                <Clock className="h-4 w-4 text-primary" />
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-foreground">14 days</div>
-              <div className="flex items-center text-sm">
-                <span className="text-success">-2 days vs last month</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <section className="py-16 section-alternate -mx-6 px-6">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground plus-accent">Dashboard Overview</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              <Card className="text-center p-6 card-hover border-border">
+                <CardContent className="p-0">
+                  <div className="text-3xl font-bold text-primary mb-2">24</div>
+                  <div className="text-sm text-subtle">Active Jobs</div>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 card-hover border-border">
+                <CardContent className="p-0">
+                  <div className="text-3xl font-bold text-primary mb-2">156</div>
+                  <div className="text-sm text-subtle">Total Candidates</div>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 card-hover border-border">
+                <CardContent className="p-0">
+                  <div className="text-3xl font-bold text-primary mb-2">8</div>
+                  <div className="text-sm text-subtle">Interviews Scheduled</div>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 card-hover border-border">
+                <CardContent className="p-0">
+                  <div className="text-3xl font-bold text-primary mb-2">3</div>
+                  <div className="text-sm text-subtle">Pending Offers</div>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 card-hover border-border">
+                <CardContent className="p-0">
+                  <div className="text-3xl font-bold text-primary mb-2">12</div>
+                  <div className="text-sm text-subtle">Days Avg. Time to Hire</div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
         {/* Recent Activity */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <Card className="lg:col-span-2">
-            <CardHeader>
-              <CardTitle>Recent Job Postings</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {[
-                { title: "Senior Frontend Developer", status: "Active", applicants: 24, date: "2 days ago" },
-                { title: "Product Manager", status: "Draft", applicants: 0, date: "1 day ago" },
-                { title: "UX Designer", status: "Active", applicants: 18, date: "3 days ago" },
-              ].map((job, index) => (
-                <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-accent/50">
-                  <div>
-                    <h4 className="font-medium text-foreground">{job.title}</h4>
-                    <p className="text-sm text-muted-foreground">{job.date}</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Badge variant={job.status === "Active" ? "default" : "secondary"}>
-                      {job.status}
-                    </Badge>
-                    <span className="text-sm text-muted-foreground">
-                      {job.applicants} applicants
-                    </span>
-                  </div>
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Recent Job Postings */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-foreground plus-accent">Recent Executive Searches</h2>
+                <div className="space-y-4">
+                  <Card className="p-6 card-hover border-border">
+                    <CardHeader className="p-0 mb-4">
+                      <CardTitle className="text-lg font-semibold">Chief Executive Officer - Manufacturing</CardTitle>
+                      <p className="text-sm text-subtle">Posted 2 days ago • Noida, UP</p>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <p className="text-sm text-subtle mb-3 leading-relaxed">Leading manufacturing unit seeking visionary CEO with 15+ years experience in automotive sector.</p>
+                      <Badge className="bg-accent text-accent-foreground">Active</Badge>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card className="p-6 card-hover border-border">
+                    <CardHeader className="p-0 mb-4">
+                      <CardTitle className="text-lg font-semibold">Chief Financial Officer - BFSI</CardTitle>
+                      <p className="text-sm text-subtle">Posted 5 days ago • Mumbai, MH</p>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <p className="text-sm text-subtle mb-3 leading-relaxed">Premier financial services company requires CFO with strong background in digital transformation.</p>
+                      <Badge variant="outline" className="border-accent text-accent">In Review</Badge>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card className="p-6 card-hover border-border">
+                    <CardHeader className="p-0 mb-4">
+                      <CardTitle className="text-lg font-semibold">VP Technology - Corporate Advisory</CardTitle>
+                      <p className="text-sm text-subtle">Posted 1 week ago • Bangalore, KA</p>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <p className="text-sm text-subtle mb-3 leading-relaxed">Corporate advisory firm seeking technology leader with expertise in AI and digital solutions.</p>
+                      <Badge variant="outline" className="border-muted-foreground text-muted-foreground">Shortlisting</Badge>
+                    </CardContent>
+                  </Card>
                 </div>
-              ))}
-            </CardContent>
-          </Card>
+              </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Quick Actions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <Button asChild variant="outline" className="w-full justify-start">
-                <Link to="/jobs/create">
-                  <Plus className="h-4 w-4 mr-2" />
-                  Create Job Post
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-start">
-                <Link to="/candidates">
-                  <Users className="h-4 w-4 mr-2" />
-                  Review Candidates
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-start">
-                <Link to="/interviews">
-                  <Clock className="h-4 w-4 mr-2" />
-                  Schedule Interview
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-start">
-                <Link to="/analytics">
-                  <TrendingUp className="h-4 w-4 mr-2" />
-                  View Analytics
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+              {/* Quick Actions */}
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-foreground plus-accent">Quick Actions</h2>
+                <div className="space-y-4">
+                  <Link to="/create-job">
+                    <Card className="p-6 card-hover border-border cursor-pointer">
+                      <CardContent className="p-0 flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-primary plus-accent">Post Leadership Role</h3>
+                          <p className="text-sm text-subtle leading-relaxed">Create new executive search requirement</p>
+                        </div>
+                        <Briefcase className="h-6 w-6 text-accent" />
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  
+                  <Link to="/candidates">
+                    <Card className="p-6 card-hover border-border cursor-pointer">
+                      <CardContent className="p-0 flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-primary plus-accent">Review Candidates</h3>
+                          <p className="text-sm text-subtle leading-relaxed">Browse executive talent pool</p>
+                        </div>
+                        <Users className="h-6 w-6 text-accent" />
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  
+                  <Link to="/schedule-interview">
+                    <Card className="p-6 card-hover border-border cursor-pointer">
+                      <CardContent className="p-0 flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-primary plus-accent">Schedule Interview</h3>
+                          <p className="text-sm text-subtle leading-relaxed">Coordinate leadership assessments</p>
+                        </div>
+                        <Calendar className="h-6 w-6 text-accent" />
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  
+                  <Link to="/analytics">
+                    <Card className="p-6 card-hover border-border cursor-pointer">
+                      <CardContent className="p-0 flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-primary plus-accent">View Analytics</h3>
+                          <p className="text-sm text-subtle leading-relaxed">Track recruitment metrics</p>
+                        </div>
+                        <TrendingUp className="h-6 w-6 text-accent" />
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </Layout>
   );

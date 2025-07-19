@@ -18,22 +18,22 @@ export default function Layout({ children, className }: LayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-card shadow-sm">
+      <header className="border-b bg-card shadow-sm sticky top-0 z-50 backdrop-blur-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link to="/" className="flex flex-col leading-none hover:opacity-90 transition-opacity">
-                <span className="text-2xl font-bold text-primary">URE HR</span>
-                <span className="text-sm text-primary">Expert consulting for leadership roles</span>
+              <Link to="/" className="flex flex-col leading-none hover:opacity-90 transition-all duration-300">
+                <span className="text-2xl font-bold text-primary plus-accent">URE HR</span>
+                <span className="text-sm text-subtle font-medium">Expert consulting for leadership roles</span>
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link 
                   to="/" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     isActive("/") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Dashboard
@@ -41,10 +41,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/about" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     isActive("/about") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   About
@@ -52,10 +52,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/jobs" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     location.pathname.startsWith("/jobs") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Jobs
@@ -63,10 +63,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/candidates" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     location.pathname.startsWith("/candidates") || location.pathname.startsWith("/talent-pool")
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Candidates
@@ -74,10 +74,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/interviews" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     location.pathname.startsWith("/interviews") || location.pathname.startsWith("/video-interviews")
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Interviews
@@ -85,10 +85,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/offers" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     location.pathname.startsWith("/offers") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Offers
@@ -96,10 +96,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/integrations" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     location.pathname.startsWith("/integrations") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Settings
@@ -107,10 +107,10 @@ export default function Layout({ children, className }: LayoutProps) {
                 <Link 
                   to="/analytics" 
                   className={cn(
-                    "transition-colors",
+                    "transition-all duration-300 font-medium relative hover:scale-105",
                     location.pathname.startsWith("/analytics") 
-                      ? "text-primary font-medium" 
-                      : "text-foreground hover:text-primary"
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
                   )}
                 >
                   Analytics
@@ -119,13 +119,13 @@ export default function Layout({ children, className }: LayoutProps) {
             </div>
             
             <div className="flex items-center space-x-3">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="hover:bg-accent/10 hover:text-accent transition-all duration-300">
                 <Bell className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="hover:bg-accent/10 hover:text-accent transition-all duration-300">
                 <Settings className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="hover:bg-accent/10 hover:text-accent transition-all duration-300">
                 <User className="h-5 w-5" />
               </Button>
             </div>
