@@ -5,13 +5,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Users, Briefcase, Clock, Plus, ArrowRight, Calendar } from "lucide-react";
 import heroImage from "@/assets/dashboard-hero.jpg";
+import officeBuilding from "@/assets/office-building.jpg";
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="hero-section relative py-24 px-6 overflow-hidden -mx-6">
-        <div className="absolute inset-0 bg-black/10" />
+      <section 
+        className="hero-section relative py-24 px-6 overflow-hidden -mx-6"
+        style={{
+          backgroundImage: `url(${officeBuilding})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-primary/80" />
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
@@ -35,7 +44,7 @@ const Index = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300"
+                className="border-2 border-white/90 text-white bg-white/10 hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
                 asChild
               >
                 <Link to="/jobs">View Executive Search</Link>
