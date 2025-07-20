@@ -50,6 +50,39 @@ export default function Layout({ children, className }: LayoutProps) {
                   About
                 </Link>
                 <Link 
+                  to="/features" 
+                  className={cn(
+                    "transition-all duration-300 font-medium relative hover:scale-105",
+                    isActive("/features") 
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
+                  )}
+                >
+                  Features
+                </Link>
+                <Link 
+                  to="/how-it-works" 
+                  className={cn(
+                    "transition-all duration-300 font-medium relative hover:scale-105",
+                    isActive("/how-it-works") 
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
+                  )}
+                >
+                  How It Works
+                </Link>
+                <Link 
+                  to="/help" 
+                  className={cn(
+                    "transition-all duration-300 font-medium relative hover:scale-105",
+                    isActive("/help") 
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
+                  )}
+                >
+                  Help
+                </Link>
+                <Link 
                   to="/jobs" 
                   className={cn(
                     "transition-all duration-300 font-medium relative hover:scale-105",
