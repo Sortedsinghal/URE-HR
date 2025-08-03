@@ -86,7 +86,7 @@ const Features = () => {
                   <Button 
                     variant="ghost" 
                     asChild 
-                    className="w-full justify-between text-accent hover:text-accent hover:bg-accent/10 group/btn"
+                    className="w-full justify-between text-accent bg-accent/5 hover:text-accent hover:bg-accent/10 group/btn border border-accent/20"
                   >
                     <Link to={`/features/${feature.slug}`}>
                       Learn More
