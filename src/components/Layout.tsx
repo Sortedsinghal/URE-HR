@@ -39,17 +39,6 @@ export default function Layout({ children, className }: LayoutProps) {
                   Dashboard
                 </Link>
                 <Link 
-                  to="/about" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    isActive("/about") 
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  About
-                </Link>
-                <Link 
                   to="/features" 
                   className={cn(
                     "transition-all duration-300 font-medium relative hover:scale-105",
@@ -58,18 +47,29 @@ export default function Layout({ children, className }: LayoutProps) {
                       : "text-foreground hover:text-accent"
                   )}
                 >
-                  Features
+                  Services
                 </Link>
                 <Link 
-                  to="/how-it-works" 
+                  to="/jobs" 
                   className={cn(
                     "transition-all duration-300 font-medium relative hover:scale-105",
-                    isActive("/how-it-works") 
+                    location.pathname.startsWith("/jobs") || location.pathname.startsWith("/candidates") || location.pathname.startsWith("/talent-pool")
                       ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
                       : "text-foreground hover:text-accent"
                   )}
                 >
-                  How It Works
+                  Recruitment
+                </Link>
+                <Link 
+                  to="/about" 
+                  className={cn(
+                    "transition-all duration-300 font-medium relative hover:scale-105",
+                    isActive("/about") || isActive("/how-it-works")
+                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
+                      : "text-foreground hover:text-accent"
+                  )}
+                >
+                  About
                 </Link>
                 <Link 
                   to="/help" 
@@ -80,73 +80,7 @@ export default function Layout({ children, className }: LayoutProps) {
                       : "text-foreground hover:text-accent"
                   )}
                 >
-                  Help
-                </Link>
-                <Link 
-                  to="/jobs" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    location.pathname.startsWith("/jobs") 
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  Jobs
-                </Link>
-                <Link 
-                  to="/candidates" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    location.pathname.startsWith("/candidates") || location.pathname.startsWith("/talent-pool")
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  Candidates
-                </Link>
-                <Link 
-                  to="/interviews" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    location.pathname.startsWith("/interviews") || location.pathname.startsWith("/video-interviews")
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  Interviews
-                </Link>
-                <Link 
-                  to="/offers" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    location.pathname.startsWith("/offers") 
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  Offers
-                </Link>
-                <Link 
-                  to="/integrations" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    location.pathname.startsWith("/integrations") 
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  Settings
-                </Link>
-                <Link 
-                  to="/analytics" 
-                  className={cn(
-                    "transition-all duration-300 font-medium relative hover:scale-105",
-                    location.pathname.startsWith("/analytics") 
-                      ? "text-primary font-semibold after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:bottom-0 after:left-0" 
-                      : "text-foreground hover:text-accent"
-                  )}
-                >
-                  Analytics
+                  Support
                 </Link>
               </nav>
             </div>

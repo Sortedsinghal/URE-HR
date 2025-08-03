@@ -39,15 +39,28 @@ const Index = () => {
                 className="bg-white text-primary hover:bg-white/90 hover:shadow-lg text-lg px-8 py-4 font-semibold transition-all duration-300"
                 asChild
               >
-                <Link to="/create-job">Request Business Proposal</Link>
+                <Link to="/features">Explore Our Services</Link>
               </Button>
               <Button 
-                variant="outline" 
                 size="lg" 
-                className="border-2 border-white/90 text-white bg-white/10 hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
+                className="bg-primary/20 text-white border-2 border-white/90 hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
                 asChild
               >
                 <Link to="/jobs">View Executive Search</Link>
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-accent/20 text-white border-2 border-white/90 hover:bg-accent hover:text-white text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
+                asChild
+              >
+                <Link to="/about">Learn More About Us</Link>
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-secondary/20 text-white border-2 border-white/90 hover:bg-secondary hover:text-secondary-foreground text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
+                asChild
+              >
+                <Link to="/features">View All Features</Link>
               </Button>
             </div>
           </div>

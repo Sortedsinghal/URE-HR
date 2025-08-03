@@ -11,6 +11,8 @@ import Features from "./pages/Features";
 import HowItWorks from "./pages/HowItWorks";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Help from "./pages/Help";
+import HelpCategory from "./pages/HelpCategory";
+import HelpArticle from "./pages/HelpArticle";
 import Jobs from "./pages/Jobs";
 import CreateJob from "./pages/CreateJob";
 import Candidates from "./pages/Candidates";
@@ -42,6 +44,8 @@ const App = () => (
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/help/:slug" element={<HelpCategory />} />
+          <Route path="/help/article/:slug" element={<HelpArticle />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/jobs/create" element={<CreateJob />} />
           <Route path="/jobs/:id/edit" element={<CreateJob />} />
