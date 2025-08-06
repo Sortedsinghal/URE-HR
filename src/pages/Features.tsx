@@ -122,7 +122,7 @@ const Features = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-4 font-semibold border-white text-white hover:bg-white hover:text-primary"
+              className="text-lg px-8 py-4 font-semibold"
               asChild
             >
               <Link to="/about">Learn More About Us</Link>
