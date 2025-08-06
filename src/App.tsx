@@ -13,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Help from "./pages/Help";
 import HelpCategory from "./pages/HelpCategory";
 import HelpArticle from "./pages/HelpArticle";
+import Contact from "./pages/Contact";
 import Jobs from "./pages/Jobs";
 import CreateJob from "./pages/CreateJob";
 import Candidates from "./pages/Candidates";
@@ -66,6 +67,7 @@ const App = () => (
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/create-job" element={<CreateJob />} />
           <Route path="/schedule-interview" element={<ScheduleInterview />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
