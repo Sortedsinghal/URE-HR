@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Users, Briefcase, Clock, Plus, ArrowRight, Calendar } from "lucide-react";
 import heroImage from "@/assets/dashboard-hero.jpg";
-import officeBuilding from "@/assets/office-building.jpg";
+import heroBanner from "@/assets/hero-banner.jpg";
 
 const Index = () => {
   return (
@@ -14,7 +14,7 @@ const Index = () => {
       <section 
         className="hero-section relative py-24 px-6 overflow-hidden -mx-6"
         style={{
-          backgroundImage: `url(${officeBuilding})`,
+          backgroundImage: `url(${heroBanner})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -43,21 +43,21 @@ const Index = () => {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-primary/20 text-white border-2 border-white/90 hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/90 hover:bg-white hover:text-primary text-lg px-8 py-4 font-semibold transition-all duration-300"
                 asChild
               >
                 <Link to="/jobs">View Executive Search</Link>
               </Button>
               <Button 
                 size="lg" 
-                className="bg-accent/20 text-white border-2 border-white/90 hover:bg-accent hover:text-white text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/90 hover:bg-accent hover:text-white text-lg px-8 py-4 font-semibold transition-all duration-300"
                 asChild
               >
                 <Link to="/about">Learn More About Us</Link>
               </Button>
               <Button 
                 size="lg" 
-                className="bg-secondary/20 text-white border-2 border-white/90 hover:bg-secondary hover:text-secondary-foreground text-lg px-8 py-4 font-semibold transition-all duration-300 backdrop-blur-sm"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/90 hover:bg-secondary hover:text-secondary-foreground text-lg px-8 py-4 font-semibold transition-all duration-300"
                 asChild
               >
                 <Link to="/features">View All Features</Link>
